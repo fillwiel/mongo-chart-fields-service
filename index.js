@@ -14,15 +14,19 @@ console.log("App listen at port 5000");
 app.use(express.json());
 app.use(cors());
 app.get("/", (req, resp) => {
+    console.log("request to the main address");
     resp.send("App is Working");
 });
 app.get("/fetchArrivalCities", async (req, resp) => {
+    console.log("received request to /fetchArrivalCities");
     Flight.distinct("arrivalCity").then(r => resp.send(r));
 });
 app.get("/fetchDepartureCities", async (req, resp) => {
+    console.log("received request to /fetchDepartureCities");
     Flight.distinct("departureCity").then(r => resp.send(r));
 });
 app.get("/fetchCountries", async (req, resp) => {
+    console.log("received request to /fetchCountries");
     Flight.distinct("country").then(r => resp.send(r));
 });
 app.listen(5000);
