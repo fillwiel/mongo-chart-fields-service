@@ -6,7 +6,7 @@ echo "=== 🚀 Deploying mongo-chart-fields-service ==="
 
 # Use current directory
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
-IMAGE_NAME="mongo-chart-fields-service:latest"
+IMAGE_NAME="mongo-chart-fields:latest"
 DEPLOYMENT_FILE="$PROJECT_DIR/mongo-chart-fields-deployment.yaml"
 SERVICE_FILE="$PROJECT_DIR/mongo-chart-fields-service.yaml"
 SECRET_NAME="mongo-chart-fields-secrets"
