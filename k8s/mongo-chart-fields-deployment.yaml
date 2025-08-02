@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-chart-fields
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-chart-fields
+  template:
+    metadata:
+      labels:
+        app: mongo-chart-fields
+    spec:
+      containers:
+        - name: mongo-chart-fields
+          image: mongo-chart-fields-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - secretRef:
+                name: mongo-chart-fields-secrets
